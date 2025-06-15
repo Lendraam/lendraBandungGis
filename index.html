@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="./resources/ol.css">
+        <link rel="stylesheet" href="resources/fontawesome-all.min.css">
+        <link rel="stylesheet" href="./resources/ol-layerswitcher.css">
+        <link rel="stylesheet" href="./resources/qgis2web.css">
+        <style>
+        html, body {
+            background-color: #ffffff;
+        }
+        .ol-control > * {
+            background-color: #f8f8f8!important;
+            color: #444444!important;
+            border-radius: 0px;
+        }
+        .ol-attribution a, .gcd-gl-input::placeholder, .search-layer-input-search::placeholder {
+            color: #444444!important;
+        }
+        .search-layer-input-search {
+            background-color: #f8f8f8!important;
+        }
+        .ol-control > *:focus, .ol-control >*:hover {
+            background-color: rgba(248, 248, 248, 0.7)!important;
+        } 
+        .ol-control {
+            background-color: rgba(255,255,255,.4) !important;
+            padding: 2px !important;
+        } 
+        </style>
+
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        /* Legend styles */
+        #legend {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 1000;
+            border: 1px solid #ccc;
+            padding: 16px;
+            width: 260px;
+            background: #fff;
+            font-family: Arial, sans-serif;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 6px;
+        }
+        .legend-symbol {
+            width: 18px;
+            height: 18px;
+            margin-right: 8px;
+            display: inline-block;
+            border: 1px solid #888;
+        }
+        .kesehatan { background: #ff0000; }
+        .pemerintahan { background: #000000; }
+        .cagarbudaya { background: #00ff00; }
+        .stasiun { background: #ffb300; }
+        .jalan { background: #e4d5d5; }
+        .danau { background: #2979ff; }
+        .sungai_ar { background: #4fc3f7; }
+        .sungai_ln { background: #0288d1; }
+        .administrasi_ln { background: #bdbdbd; }
+        .administrasidesa { background: #388e3c; }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div id="map">
+            <div id="popup" class="ol-popup">
+                <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+                <div id="popup-content"></div>
+            </div>
+        </div>
+        <!-- Legend dipindahkan ke luar #map -->
+<div id="legend">
+    <img src="images/logokotabandung.png" alt="Logo Kota Bandung" style="width:80px; display:block; margin:0 auto 8px auto;">
+    <div style="text-align:center; font-weight:bold; margin-bottom:16px; font-size:18px;">PETA BANDUNG KOTA</div>
+    <div class="legend-item"><span class="legend-symbol kesehatan"></span> KESEHATAN</div>
+    <div class="legend-item"><span class="legend-symbol pemerintahan"></span> PEMERINTAHAN</div>
+    <div class="legend-item"><span class="legend-symbol cagarbudaya"></span> CAGARBUDAYA</div>
+    <div class="legend-item"><span class="legend-symbol stasiun"></span> STASIUNKA</div>
+    <div class="legend-item"><span class="legend-symbol jalan"></span> JALAN</div>
+    <div class="legend-item"><span class="legend-symbol danau"></span> DANAU</div>
+    <div class="legend-item"><span class="legend-symbol sungai_ar"></span> SUNGAI</div>
+    <div class="legend-item"><span class="legend-symbol sungai_ln"></span> SUNGAI</div>
+    <div class="legend-item"><span class="legend-symbol administrasi_ln"></span> ADMINISTRASI</div>
+    <div class="legend-item"><span class="legend-symbol administrasidesa"></span> ADMINISTRASIDESA</div>
+</div>
+        <script src="resources/qgis2web_expressions.js"></script>
+        <script src="./resources/functions.js"></script>
+        <script src="./resources/ol.js"></script>
+        <script src="./resources/ol-layerswitcher.js"></script>
+        <script src="layers/ADMINISTRASIDESA_AR_25K_0.js"></script><script src="layers/ADMINISTRASI_LN_25K_1.js"></script><script src="layers/SUNGAI_LN_25K_2.js"></script><script src="layers/SUNGAI_AR_25K_3.js"></script><script src="layers/DANAU_AR_25K_4.js"></script><script src="layers/JALAN_LN_25K_5.js"></script><script src="layers/STASIUNKA_PT_25K_6.js"></script><script src="layers/CAGARBUDAYA_PT_25K_7.js"></script><script src="layers/PEMERINTAHAN_PT_25K_8.js"></script><script src="layers/KESEHATAN_PT_25K_9.js"></script>
+        <script src="styles/ADMINISTRASIDESA_AR_25K_0_style.js"></script><script src="styles/ADMINISTRASI_LN_25K_1_style.js"></script><script src="styles/SUNGAI_LN_25K_2_style.js"></script><script src="styles/SUNGAI_AR_25K_3_style.js"></script><script src="styles/DANAU_AR_25K_4_style.js"></script><script src="styles/JALAN_LN_25K_5_style.js"></script><script src="styles/STASIUNKA_PT_25K_6_style.js"></script><script src="styles/CAGARBUDAYA_PT_25K_7_style.js"></script><script src="styles/PEMERINTAHAN_PT_25K_8_style.js"></script><script src="styles/KESEHATAN_PT_25K_9_style.js"></script>
+        <script src="./layers/layers.js" type="text/javascript"></script> 
+        <script src="./resources/Autolinker.min.js"></script>
+        <script src="./resources/qgis2web.js"></script>
+    </body>
+</html>
