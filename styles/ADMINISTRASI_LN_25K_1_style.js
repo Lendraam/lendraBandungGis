@@ -21,7 +21,7 @@ var style_ADMINISTRASI_LN_25K_1 = function(feature, resolution){
         labelText = String("");
     }
     var style = [ new ol.style.Style({
-        stroke: new ol.style.Stroke({color: 'rgba(114,155,111,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 0.988}),
+        stroke: new ol.style.Stroke({color: 'rgba(114,100,60,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 0.988}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
